@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: moniqueazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moniqueazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: moniqueazurevotingappredis 
+    spec:
+      containers:
+        - name: moniqueazurevotingappredis 
+          image: mycontainerregistryus.azurecr.io/moniqueazurevotingappredis
+          ports:
+          - containerPort: 80
